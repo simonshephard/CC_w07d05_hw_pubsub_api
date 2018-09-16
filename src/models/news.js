@@ -8,11 +8,8 @@ const News = function (comp) {
 }
 
 News.prototype.bindEvents = function () {
-
-  // populate initial data
   const initial_index = CONSTANTS.PUBS.indexOf(CONSTANTS.INITIAL[this.comp]);
   this.getData(initial_index);
-
   PubSub.subscribe(this.comp+'SearchView:submit', (event) => {
     this.getDataSearch(event.detail);
   })
